@@ -18,10 +18,14 @@ module.exports = {
     },
     extend: {
       colors: {
-        border: "hsl(var(--border))",
+        border: { DEFAULT: "hsl(var(--border))", once: 'hsl(200 3% 79%)' },
         input: "hsl(var(--input))",
         ring: "hsl(var(--ring))",
-        background: "hsl(var(--background))",
+        background: {
+          DEFAULT: "hsl(var(--background))",
+          navbar: 'hsl(208 40% 9%)',
+          footer: 'hsl(207 33% 95%)'
+        },
         foreground: "hsl(var(--foreground))",
         primary: {
           DEFAULT: "hsl(var(--primary))",
@@ -53,7 +57,10 @@ module.exports = {
           foreground: "hsl(var(--card-foreground))",
         },
         disabled: {
-          DEFAULT: 'var(--disabled)',
+          DEFAULT: 'hsl(var(--disabled))',
+        },
+        grey: {
+          DEFAULT: 'hsl(var(--grey))',
         }
       },
       borderRadius: {
@@ -75,6 +82,12 @@ module.exports = {
         "accordion-down": "accordion-down 0.2s ease-out",
         "accordion-up": "accordion-up 0.2s ease-out",
       },
+    },
+    screens: {
+      "sm": { max: "320px" },
+      "md": { max: "738px" },
+      "lg": { max: "1920px" },
+      "2xl": "1400px",
     },
   },
   plugins: [require("tailwindcss-animate")],
