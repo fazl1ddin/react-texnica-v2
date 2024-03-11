@@ -59,6 +59,7 @@ const DialogHeader = ({
       )}
       {...props}
     />
+    {/** FIXME position of cross icon. Maybe solution:  translate-x-[50%]*/}
     <DialogPrimitive.Close className="absolute right-7 top-[50%] translate-y-[-50%] rounded-sm opacity-70 ring-offset-background transition-opacity hover:opacity-100 focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 disabled:pointer-events-none data-[state=open]:bg-accent data-[state=open]:text-muted-foreground">
       <X className="h-[16px] w-[16px] text-destructive" />
       <span className="sr-only">Close</span>

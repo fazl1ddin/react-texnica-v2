@@ -17,6 +17,9 @@ module.exports = {
       },
     },
     extend: {
+      fontFamily: {
+        sans: ['"Exo 2"', 'sans-serif']
+      },
       colors: {
         border: { DEFAULT: "hsl(var(--border))", once: 'hsl(200 3% 79%)' },
         input: "hsl(var(--input))",

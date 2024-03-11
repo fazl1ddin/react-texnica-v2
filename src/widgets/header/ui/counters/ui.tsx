@@ -1,4 +1,5 @@
 import { cn } from "@/lib/utils";
+import { Link } from "@tanstack/react-router";
 
 interface SVG {
   activeColor: undefined | string;
@@ -130,11 +131,19 @@ const Counter: React.FC<Counter> = ({
 }) => {
   const Component = icon;
   return (
-    <div
-      className={cn("w-12 h-12 flex items-center justify-center", className)}
+    <Link
+      className={cn(
+        "w-12 h-12 flex items-center justify-center relative",
+        className
+      )}
     >
+      {count && (
+        <span className="absolute w-5 h-5 rounded-full bg-primary-dark top-0 right-0 text-white flex items-center justify-center text-sm">
+          {count}
+        </span>
+      )}
       {<Component activeColor={(count && activeColor) || undefined} />}
-    </div>
+    </Link>
   );
 };
 
