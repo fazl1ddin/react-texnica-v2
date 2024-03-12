@@ -1,7 +1,6 @@
 import {
   Dialog,
   DialogContent,
-  DialogFooter,
   DialogHeader,
   DialogTitle,
   DialogTrigger,
@@ -9,7 +8,6 @@ import {
 import { Counters } from "../counters";
 import { Input } from "@/components/ui/input";
 import { Container } from "@/components/ui/container";
-import { Button } from "@/components/ui/button";
 
 const LoupeSVG = () => (
   <svg
@@ -39,10 +37,10 @@ const LoupeSVG = () => (
 
 const Toolbar = () => {
   return (
-    <div className="flex items-center justify-center">
+    <div className="flex items-center justify-center mr-[-10px]">
       <Dialog>
         <DialogTrigger asChild>
-          <div className="border-b border-b-border-once flex items-center justify-center px-3 pt-[6px] pb-3 cursor-pointer">
+          <div className="border-b border-b-border-once flex items-center justify-center px-3 pt-[10px] pb-3 cursor-pointer">
             <LoupeSVG />
             Поиск
           </div>
@@ -62,22 +60,9 @@ const Toolbar = () => {
           </Container>
         </DialogContent>
       </Dialog>
-      <div className="ml-2 mr-5">
+      <div className="ml-2">
         <Counters />
       </div>
-      <Dialog>
-        <DialogTrigger asChild>
-          <Button className="px-[26.5px]">Войти</Button>
-        </DialogTrigger>
-        <DialogContent className="sm:max-w-md">
-          <DialogHeader className="bg-accent px-[30px] py-5">
-            <DialogTitle>Вход</DialogTitle>
-          </DialogHeader>
-          <div className="flex items-center space-x-2 p-[30px]">
-            <div className="grid flex-1 gap-2"></div>
-          </div>
-        </DialogContent>
-      </Dialog>
     </div>
   );
 };
