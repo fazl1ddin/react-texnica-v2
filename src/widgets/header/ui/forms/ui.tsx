@@ -13,8 +13,9 @@ import { useForm } from "react-hook-form";
 import { z } from "zod";
 import { Button } from "@/components/ui/button";
 import { useMutation } from "@tanstack/react-query";
-import { login } from "@/shared/api";
+import { login, register } from "@/shared/api";
 import { Link } from "@tanstack/react-router";
+import { useAuthContext } from "../../model";
 
 const singInSchema = z.object({
   creditionals: z.string().min(2, {
@@ -27,6 +28,8 @@ const singInSchema = z.object({
 });
 
 const SingInForm = () => {
+  const { setAuth } = useAuthContext();
+
   const form = useForm<z.infer<typeof singInSchema>>({
     resolver: zodResolver(singInSchema),
     defaultValues: {
@@ -41,9 +44,12 @@ const SingInForm = () => {
     mutate(values);
   }
 
-  const { mutate, isPending, data } = useMutation({
+  const { mutate, isPending } = useMutation({
     mutationKey: ["auth-login"],
     mutationFn: login,
+    onSuccess: (data) => {
+      setAuth(data);
+    },
   });
 
   return (
@@ -119,6 +125,8 @@ const singUpSchema = z.object({
 });
 
 const SingUpForm = () => {
+  const { setAuth } = useAuthContext();
+
   const form = useForm<z.infer<typeof singUpSchema>>({
     resolver: zodResolver(singUpSchema),
   });
@@ -127,11 +135,15 @@ const SingUpForm = () => {
     // Do something with the form values.
     // ✅ This will be type-safe and validated.
     console.log(values);
+    mutate(values);
   }
 
-  const { mutate, isPending, data } = useMutation({
-    mutationKey: ["auth-login"],
-    mutationFn: login,
+  const { mutate, isPending } = useMutation({
+    mutationKey: ["auth-register"],
+    mutationFn: register,
+    onSuccess: (data) => {
+      setAuth(data);
+    },
   });
 
   return (

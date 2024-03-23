@@ -21,9 +21,13 @@ module.exports = {
         sans: ['"Exo 2"', 'sans-serif']
       },
       colors: {
-        border: { DEFAULT: "hsl(var(--border))", once: 'hsl(200 3% 79%)' },
+        border: { DEFAULT: "hsl(var(--border))", grey: 'hsl(200 3% 79%)' },
         input: "hsl(var(--input))",
         ring: "hsl(var(--ring))",
+        exit: 'hsl(360 85% 63%)',
+        green: 'hsl(173 39% 47%)',
+        warning: 'hsl(0 67% 53%)',
+        orange: 'hsl(16 88% 62%)',
         background: {
           DEFAULT: "hsl(var(--background))",
           navbar: 'hsl(208 40% 9%)',
@@ -80,10 +84,14 @@ module.exports = {
           from: { height: "var(--radix-accordion-content-height)" },
           to: { height: "0" },
         },
+        'flip-y': {
+          to: { transform: 'rotateY(180deg)' }
+        }
       },
       animation: {
         "accordion-down": "accordion-down 0.2s ease-out",
         "accordion-up": "accordion-up 0.2s ease-out",
+        "flip-y": "flip-y 0.2s ease-out"
       },
     },
     screens: {

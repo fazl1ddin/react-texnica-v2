@@ -8,6 +8,7 @@ import {
 import { Counters } from "../counters";
 import { Input } from "@/components/ui/input";
 import { Container } from "@/components/ui/container";
+import { useQueryClient } from "@tanstack/react-query";
 
 const LoupeSVG = () => (
   <svg
@@ -21,26 +22,33 @@ const LoupeSVG = () => (
     <path
       d="M13 19C8.58172 19 5 15.4183 5 11C5 6.58172 8.58172 3 13 3C17.4183 3 21 6.58172 21 11C21 15.4183 17.4183 19 13 19Z"
       stroke="#838688"
-      stroke-width="2"
-      stroke-linecap="round"
-      stroke-linejoin="round"
+      strokeWidth="2"
+      strokeLinecap="round"
+      strokeLinejoin="round"
     />
     <path
       d="M2.99961 21.0004L7.34961 16.6504"
       stroke="#838688"
-      stroke-width="2"
-      stroke-linecap="round"
-      stroke-linejoin="round"
+      strokeWidth="2"
+      strokeLinecap="round"
+      strokeLinejoin="round"
     />
   </svg>
 );
 
 const Toolbar = () => {
+  const client = useQueryClient();
+
   return (
     <div className="flex items-center justify-center mr-[-10px]">
       <Dialog>
         <DialogTrigger asChild>
-          <div className="border-b border-b-border-once flex items-center justify-center px-3 pt-[10px] pb-3 cursor-pointer">
+          <div
+            onClick={() =>
+              console.log(client.getQueryData(["auth-login-get", {creditionals: 'gsgsa', password: 'cxpv8nyb44Q', save: true}]), "data")
+            }
+            className="border-b border-b-border-grey flex items-center justify-center px-3 pt-[10px] pb-3 cursor-pointer"
+          >
             <LoupeSVG />
             Поиск
           </div>
