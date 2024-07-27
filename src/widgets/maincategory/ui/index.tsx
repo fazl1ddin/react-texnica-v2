@@ -1,5 +1,5 @@
-import { Title } from "@/components/ui/title";
-import { ProductCard } from "@/widgets/productcard";
+import { Title } from "@/shared/components/ui/title";
+import { ProductCard } from "@/feautures/productcard";
 import { Link } from "@tanstack/react-router";
 
 const PolygonSVG = () => {
@@ -26,7 +26,7 @@ interface MainCategoryProps extends React.HTMLAttributes<HTMLHeadElement> {
 const MainCategory: React.FC<MainCategoryProps> = ({ title }) => {
   return (
     <>
-      <div className="flex items-end">
+      <div className="flex items-end mb-10">
         <Title className="leading-[47px]">{title}</Title>
         <Link className="flex items-end text-md leading-4 mb-[7.5px] ml-[30px]">
           Все товары&nbsp;

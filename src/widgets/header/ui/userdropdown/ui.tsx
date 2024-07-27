@@ -4,8 +4,8 @@ import {
   MenubarItem,
   MenubarSeparator,
   MenubarTrigger,
-} from "@/components/ui/menubar";
-import { MenubarMenu } from "../../../../components/ui/menubar";
+} from "@/shared/components/ui/menubar";
+import { MenubarMenu } from "@/shared/components/ui/menubar";
 import { useAuthContext } from "../../model";
 
 const UserIcon = () => {

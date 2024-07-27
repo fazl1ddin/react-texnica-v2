@@ -2,4 +2,4 @@ const paths = {
   home: "/",
 };
 
-export { paths };
+export {paths}

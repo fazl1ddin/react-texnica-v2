@@ -1,4 +1,4 @@
-import { ProductType, Tag } from "./model";
+import { ProductType, Tag } from "../../model/product";
 
 function getRandom(min: number, max: number) {
   return Math?.floor(Math?.random() * (max - min)) + min;
@@ -11,11 +11,19 @@ type GetProductProps = {
 
 const names = [
     "Гироскутер Smart Balance Well 6.5 Хип-Хоп (АКВАЗАЩИТА)",
-    "Гироскутер Smart Balance",
-    "Гироскутер Smart Balance Premium 10.5 Зелёный граффити",
+    // "Гироскутер Smart Balance",
+    // "Гироскутер Smart Balance Premium 10.5 Зелёный граффити",
   ],
-  prices = [6000, 5400, 13690],
-  sales = [30, 20, 0, 0, 0, 0],
+  prices = [
+    5400,
+    // 6000,
+    // 13690
+  ],
+  sales = [
+    // 30,
+    20,
+    // 0, 0, 0, 0
+  ],
   tags: Tag[] = ["new", "bestseller"];
 
 const getProduct = async (props: GetProductProps): Promise<ProductType> => {
@@ -54,7 +62,8 @@ const getProduct = async (props: GetProductProps): Promise<ProductType> => {
             cruise2: "Есть",
             frontBrake3: "-",
           },
-          tags: tags.slice(start, getRandom(start, tags.length)),
+          tags: ["new", "bestseller"],
+          // tags.slice(start, getRandom(start, tags.length)),
           waterproof: Boolean(getRandom(0, 10)),
           ratesCount: getRandom(0, 100),
         });

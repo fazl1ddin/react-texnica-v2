@@ -5,11 +5,11 @@ import {
   DialogHeader,
   DialogTitle,
   DialogTrigger,
-} from "@/components/ui/dialog";
+} from "@/shared/components/ui/dialog";
 import { Contacts } from "./contacts";
 import { Logo } from "./logo";
 import { Toolbar } from "./toolbar";
-import { Button } from "@/components/ui/button";
+import { Button } from "@/shared/components/ui/button";
 import { SingInForm, SingUpForm } from "./forms/ui";
 import { AuthProvider } from "../model";
 import { AuthModel } from "@/shared/api";

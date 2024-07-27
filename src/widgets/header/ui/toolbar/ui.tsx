@@ -4,10 +4,10 @@ import {
   DialogHeader,
   DialogTitle,
   DialogTrigger,
-} from "@/components/ui/dialog";
+} from "@/shared/components/ui/dialog";
 import { Counters } from "../counters";
-import { Input } from "@/components/ui/input";
-import { Container } from "@/components/ui/container";
+import { Input } from "@/shared/components/ui/input";
+import { Container } from "@/shared/components/ui/container";
 import { useQueryClient } from "@tanstack/react-query";
 
 const LoupeSVG = () => (
@@ -45,7 +45,17 @@ const Toolbar = () => {
         <DialogTrigger asChild>
           <div
             onClick={() =>
-              console.log(client.getQueryData(["auth-login-get", {creditionals: 'gsgsa', password: 'cxpv8nyb44Q', save: true}]), "data")
+              console.log(
+                client.getQueryData([
+                  "auth-login-get",
+                  {
+                    creditionals: "gsgsa",
+                    password: "cxpv8nyb44Q",
+                    save: true,
+                  },
+                ]),
+                "data"
+              )
             }
             className="border-b border-b-border-grey flex items-center justify-center px-3 pt-[10px] pb-3 cursor-pointer"
           >
